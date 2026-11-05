@@ -35,7 +35,7 @@ const config = {
     max: Number(process.env.RATE_LIMIT_MAX) || 5,
   },
   mail: {
-    mode: String(process.env.MAIL_MODE || 'smtp').toLowerCase(), // "smtp" | "file" (save to data/enquiries.jsonl, no email account needed) | "log" (dev: nothing stored or sent)
+    mode: String(process.env.MAIL_MODE || 'file').toLowerCase(), // "file" (save to data/enquiries.jsonl, no email account needed) | "smtp" (send real email) | "log" (dev: nothing stored or sent)
     to: process.env.MAIL_TO || 'info@kalpanaaasoftwaresolutions.in',
     host: process.env.SMTP_HOST || '',
     port: smtpPort,
