@@ -1,0 +1,297 @@
+/* ==========================================================================
+   KSS chat launcher skins  (load AFTER styles.css)
+   Skins : robot (default) | peek | orb | typing | gif
+   Themes: cyan (default) | gold         -> ?skin=orb  ?theme=gold
+   Change defaults in chat-launcher.js (DEFAULT_SKIN / DEFAULT_THEME)
+   ========================================================================== */
+
+/* ---------- shared reset: beats the older .chat-fab rules by specificity ---------- */
+.chat-fab[data-skin]{
+  --cl-glow:#00e5ff; --cl-glow2:#1f5cff; --cl-glow-rgb:0,229,255;
+  position:fixed;right:24px;bottom:50px;z-index:92;
+  display:flex;align-items:center;gap:10px;
+  padding:0;margin:0;border:0;background:none;color:var(--text);
+  clip-path:none;overflow:visible;filter:none;
+  font:600 12px/1 var(--font-h);letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s ease,filter .3s;
+}
+.chat-fab[data-theme="gold"]{--cl-glow:#ffc542; --cl-glow2:#ff8a00; --cl-glow-rgb:255,197,66}
+.chat-fab[data-skin]::before,
+.chat-fab[data-skin]::after{content:none;animation:none}
+.chat-fab[data-skin]:hover{background:none;color:var(--text);filter:none;transform:none}
+.chat-fab[data-skin]:focus-visible{outline:2px solid var(--blue);outline-offset:6px;border-radius:16px}
+.chat-fab[data-skin] i{font-style:normal}
+.chat-fab[data-skin] svg{display:block;overflow:visible}
+
+.chat-fab .cl-label{white-space:nowrap;font-weight:600}
+
+/* ---------- shared animations ---------- */
+@keyframes clBlink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+@keyframes clPulse{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes clTilt{0%,40%,100%{transform:rotate(0)}50%{transform:rotate(-4deg)}60%{transform:rotate(3deg)}70%{transform:rotate(0)}}
+@keyframes clSpin{to{transform:rotate(360deg)}}
+.chat-fab .rb-eye{transform-box:fill-box;transform-origin:center;animation:clBlink 4.6s infinite}
+.chat-fab .rb-tip,
+.chat-fab .rb-core{animation:clPulse 1.6s ease-in-out infinite}
+
+/* ==========================================================================
+   ROBOT (hovering metallic assistant)  +  GIF (your own robot.gif, same layout)
+   ========================================================================== */
+.chat-fab[data-skin="robot"],
+.chat-fab[data-skin="gif"]{flex-direction:column;align-items:center;gap:3px;right:18px;bottom:22px}
+
+.chat-fab .cl-art{position:relative;display:block;width:64px}
+.chat-fab .cl-art svg{position:relative;width:100%;height:auto}
+.chat-fab .cl-gif{display:block;width:64px;height:auto}
+/* soft glow halo behind the robot */
+.chat-fab .cl-art::before{
+  content:"";position:absolute;inset:6% -6% 14%;border-radius:50%;
+  background:radial-gradient(circle,rgba(var(--cl-glow-rgb),.28),rgba(var(--cl-glow-rgb),0) 68%);
+  filter:blur(6px);animation:clHalo 3.2s ease-in-out infinite;
+}
+@keyframes clHalo{0%,100%{opacity:.7;transform:scale(.96)}50%{opacity:1;transform:scale(1.06)}}
+
+/* light nameplate */
+.chat-fab .cl-tag{
+  display:block;padding:5px 12px;color:#0a1530;
+  background:#ffffff;
+  border:1px solid rgba(31,92,255,.25);
+  font-size:8.5px;letter-spacing:.14em;font-weight:700;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+  box-shadow:0 4px 14px rgba(31,92,255,.15);
+  transition:filter .3s,background .3s,border-color .3s,color .3s;
+}
+.chat-fab .cl-tag::before{
+  content:"";display:inline-block;width:6px;height:6px;margin-right:6px;vertical-align:middle;border-radius:50%;
+  background:#00b8e6;box-shadow:0 0 6px rgba(0,184,230,.8);animation:clPulse 1.6s ease-in-out infinite;
+}
+.chat-fab[data-skin]:hover .cl-tag{background:#f3f8ff;border-color:var(--blue);color:var(--blue);filter:none}
+
+/* speech bubble (light card with glowing cyan edge) */
+.chat-fab .cl-hint{
+  position:absolute;right:0;bottom:calc(100% - 4px);white-space:nowrap;
+  padding:7px 12px;border-radius:12px 12px 3px 12px;
+  background:#ffffff;color:#0a1530;border:1.5px solid rgba(0,184,230,.5);
+  box-shadow:0 8px 24px rgba(31,92,255,.16),0 2px 8px rgba(10,21,48,.08);
+  font:600 11.5px/1.2 var(--font-b);letter-spacing:.01em;text-transform:none;
+  opacity:0;transform:translateY(6px) scale(.92);transform-origin:100% 100%;pointer-events:none;
+}
+@keyframes clHint{
+  0%,4%{opacity:0;transform:translateY(6px) scale(.92)}
+  8%,40%{opacity:1;transform:none}
+  44%,100%{opacity:0;transform:translateY(6px) scale(.92)}
+}
+
+/* hover-float + ground shadow */
+.chat-fab .rb-float{animation:rbBob 3.2s ease-in-out infinite}
+@keyframes rbBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.chat-fab .rb-shadow{transform-box:fill-box;transform-origin:center;animation:rbShadow 3.2s ease-in-out infinite}
+@keyframes rbShadow{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(.75);opacity:.5}}
+
+/* thruster flicker, reactor ring, visor scan, head tilt */
+.chat-fab .rb-flame{transform-box:fill-box;transform-origin:50% 0;animation:rbFlame .22s ease-in-out infinite alternate}
+@keyframes rbFlame{from{transform:scaleY(.82);opacity:.8}to{transform:scaleY(1.15);opacity:1}}
+.chat-fab .rb-spin{transform-box:fill-box;transform-origin:center;animation:clSpin 6s linear infinite}
+.chat-fab .rb-scan{animation:rbScan 5s ease-in-out infinite}
+@keyframes rbScan{0%,60%{transform:translateX(0);opacity:0}66%{opacity:1}94%{opacity:1}100%{transform:translateX(72px);opacity:0}}
+.chat-fab .rb-head{transform-box:fill-box;transform-origin:50% 100%;animation:clTilt 6s ease-in-out infinite}
+
+/* arms: pivots in SVG user units */
+.chat-fab .rb-wave,
+.chat-fab .rb-arm-r,
+.chat-fab .rb-fore{transform-box:view-box}
+.chat-fab .rb-wave{transform-origin:30px 88px}
+.chat-fab .rb-fore{transform-origin:30px 113px}
+.chat-fab .rb-arm-r{transform-origin:90px 88px;animation:rbArmSway 3.2s ease-in-out infinite}
+@keyframes rbArmSway{0%,100%{transform:rotate(1.5deg)}50%{transform:rotate(-2.5deg)}}
+
+/* hover: raise the arm and wave */
+.chat-fab[data-skin]:hover .rb-wave{animation:rbRaise .35s ease-out both}
+.chat-fab[data-skin]:hover .rb-fore{animation:rbForeWave .7s ease-in-out infinite}
+@keyframes rbRaise{to{transform:rotate(150deg)}}
+@keyframes rbForeWave{0%,100%{transform:rotate(0)}25%{transform:rotate(-20deg)}75%{transform:rotate(20deg)}}
+.chat-fab[data-skin]:hover .rb-float{animation-duration:1.8s}
+
+/* hide while the chat panel is open (panel takes the robot's spot) */
+.chat-fab[data-skin="robot"][aria-expanded="true"],
+.chat-fab[data-skin="gif"][aria-expanded="true"]{opacity:0;transform:translateY(28px) scale(.8);pointer-events:none}
+
+/* ==========================================================================
+   ENTRANCE: fly in from the right, hover, wave + say hi, then idle loops
+   JS drives  data-state = walk -> greet -> idle   (see chat-launcher.js)
+   ========================================================================== */
+.chat-fab[data-state="walk"]{animation:clWalkIn var(--cl-walk,4200ms) linear both}
+@keyframes clWalkIn{
+  0%{transform:translateX(calc(100vw + 140px))}
+  88%{transform:translateX(26px);animation-timing-function:cubic-bezier(.2,.7,.3,1)}
+  100%{transform:translateX(0)}
+}
+/* leaning into the flight, longer thruster flame, arms trailing back */
+.chat-fab[data-state="walk"] .rb-float{transform-box:view-box;transform-origin:60px 100px;animation:rbGlide .9s ease-in-out infinite}
+@keyframes rbGlide{0%,100%{transform:translateY(0) rotate(-9deg)}50%{transform:translateY(-4px) rotate(-7deg)}}
+.chat-fab[data-state="walk"] .rb-flame{animation:rbFlameBoost .14s ease-in-out infinite alternate}
+@keyframes rbFlameBoost{from{transform:scaleY(1.4);opacity:.85}to{transform:scaleY(1.9);opacity:1}}
+.chat-fab[data-state="walk"] .rb-wave,
+.chat-fab[data-state="walk"] .rb-arm-r{animation:rbTrail .6s ease-in-out infinite}
+@keyframes rbTrail{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(-18deg)}}
+
+/* arrival: hand up, forearm waves 4x, speech bubble */
+.chat-fab[data-state="greet"] .rb-wave{animation:rbGreet 3.6s ease-in-out both}
+@keyframes rbGreet{0%{transform:rotate(0)}14%,86%{transform:rotate(150deg)}100%{transform:rotate(0)}}
+.chat-fab[data-state="greet"] .rb-fore{animation:rbForeWave .7s ease-in-out .5s 4 both}
+.chat-fab[data-state="greet"] .cl-hint{animation:clHintGreet 3.8s ease-in-out both}
+@keyframes clHintGreet{
+  0%{opacity:0;transform:translateY(6px) scale(.92)}
+  8%,86%{opacity:1;transform:none}
+  100%{opacity:0;transform:translateY(6px) scale(.92)}
+}
+
+/* later: occasional idle wave + bubble (starts 6s after the greeting ends) */
+.chat-fab[data-state="idle"] .rb-wave{animation:rbWave 14s ease-in-out 6s infinite}
+.chat-fab[data-state="idle"] .rb-fore{animation:rbForeIdle 14s ease-in-out 6s infinite}
+.chat-fab[data-state="idle"] .cl-hint{animation:clHint 14s ease-in-out 6s infinite}
+@keyframes rbWave{0%,4%{transform:rotate(0)}8%,30%{transform:rotate(150deg)}36%,100%{transform:rotate(0)}}
+@keyframes rbForeIdle{
+  0%,8%{transform:rotate(0)}
+  11%{transform:rotate(-20deg)}15%{transform:rotate(20deg)}
+  19%{transform:rotate(-20deg)}23%{transform:rotate(20deg)}
+  27%{transform:rotate(-20deg)}30%,100%{transform:rotate(0)}
+}
+
+/* ==========================================================================
+   PEEK  (gradient pill, little metallic robot head popping out)
+   ========================================================================== */
+.chat-fab[data-skin="peek"]{
+  height:48px;padding:0 22px 0 70px;border-radius:999px;
+  background:var(--grad);color:#fff;box-shadow:0 12px 26px rgba(31,92,255,.38);
+}
+.chat-fab[data-skin="peek"]:hover{background:var(--grad);color:#fff;filter:brightness(1.08);transform:translateY(-3px)}
+.chat-fab[data-skin="peek"] .cl-label{color:#fff;font-size:12.5px;letter-spacing:.12em}
+.chat-fab .cl-peek{position:absolute;left:8px;bottom:2px;display:block;width:56px;height:60px;pointer-events:none}
+.chat-fab .cl-peek svg{width:100%;height:100%}
+.chat-fab .pk-head{transform-box:fill-box;transform-origin:50% 100%;animation:clTilt 5s ease-in-out infinite}
+.chat-fab[data-skin="peek"]:hover .pk-head{animation-duration:1.2s}
+
+/* ==========================================================================
+   ORB  (glowing AI core with orbiting rings, label pill on the left)
+   ========================================================================== */
+.chat-fab[data-skin="orb"]{flex-direction:row-reverse;gap:12px}
+.chat-fab[data-skin="orb"] .cl-label{
+  padding:10px 14px;background:#fff;color:var(--text);border:1px solid var(--line2);border-radius:999px;
+  box-shadow:0 8px 20px rgba(31,92,255,.16);font-size:11.5px;letter-spacing:.12em;
+  transition:background .3s,color .3s,border-color .3s;
+}
+.chat-fab[data-skin="orb"]:hover .cl-label{background:var(--blue);color:#fff;border-color:var(--blue)}
+.chat-fab .cl-orb{position:relative;display:block;width:64px;height:64px;flex:none;transition:transform .35s}
+.chat-fab[data-skin="orb"]:hover .cl-orb{transform:scale(1.08)}
+.chat-fab .cl-orb::before{
+  content:"";position:absolute;inset:-9px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,184,230,.5),rgba(31,92,255,0) 68%);
+  animation:orbGlow 2.6s ease-in-out infinite;
+}
+@keyframes orbGlow{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.12);opacity:1}}
+.chat-fab .cl-orb svg{position:relative;width:100%;height:100%}
+.chat-fab .ob-r1,.chat-fab .ob-r2,.chat-fab .ob-spark{transform-box:view-box;transform-origin:32px 32px}
+.chat-fab .ob-r1{animation:clSpin 14s linear infinite}
+.chat-fab .ob-r2{animation:clSpin 9s linear infinite reverse}
+.chat-fab .ob-spark{animation:obSpark 2.6s ease-in-out infinite}
+@keyframes obSpark{0%,100%{transform:scale(.85) rotate(0)}50%{transform:scale(1.1) rotate(45deg)}}
+
+/* ==========================================================================
+   TYPING  (gradient chat bubble with bouncing dots)
+   ========================================================================== */
+.chat-fab[data-skin="typing"]{
+  gap:12px;padding:14px 22px 14px 18px;border-radius:24px 24px 6px 24px;
+  background:var(--grad);color:#fff;box-shadow:0 14px 28px rgba(31,92,255,.38);
+}
+.chat-fab[data-skin="typing"]:hover{background:var(--grad);color:#fff;filter:brightness(1.08);transform:translateY(-3px)}
+.chat-fab[data-skin="typing"] .cl-label{color:#fff;font-size:12.5px;letter-spacing:.12em}
+.chat-fab .cl-dots{display:flex;align-items:center;gap:5px;height:14px}
+.chat-fab .cl-dots i{display:block;width:7px;height:7px;border-radius:50%;background:#fff;animation:clDot 1.1s ease-in-out infinite}
+.chat-fab .cl-dots i:nth-child(2){animation-delay:.15s}
+.chat-fab .cl-dots i:nth-child(3){animation-delay:.3s}
+.chat-fab[data-skin="typing"]:hover .cl-dots i{animation-duration:.7s}
+@keyframes clDot{0%,60%,100%{transform:translateY(0);opacity:.55}30%{transform:translateY(-5px);opacity:1}}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+@media (max-width:760px){
+  .chat-fab[data-skin]{right:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .chat-fab .cl-art,.chat-fab .cl-gif{width:50px}
+  .chat-fab .cl-orb{width:56px;height:56px}
+  .chat-fab[data-skin="peek"]{height:44px;padding:0 18px 0 66px}
+  /* label stays in the DOM for screen readers, just not visible */
+  .chat-fab .cl-collapse{
+    position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap;box-shadow:none;
+  }
+}
+@media (max-width:480px){
+  .chat-fab .cl-hint{font-size:11px;padding:7px 10px}
+}
+
+/* ==========================================================================
+   v3: compact + clean  (overrides the sizes/effects above)
+   ========================================================================== */
+.chat-fab[data-skin="robot"],
+.chat-fab[data-skin="gif"]{gap:3px;right:20px;bottom:22px}
+.chat-fab .cl-art{width:62px}
+.chat-fab .cl-gif{width:64px}
+.chat-fab .cl-art::before{content:none}              /* no halo */
+
+/* slim clean light pill */
+.chat-fab .cl-tag{
+  padding:6px 13px;font-size:9.5px;font-weight:700;letter-spacing:.12em;
+  background:#ffffff;color:#0a1530;border:1.5px solid rgba(31,92,255,.25);
+  clip-path:none;border-radius:999px;
+  box-shadow:0 6px 18px rgba(31,92,255,.14),0 2px 6px rgba(10,21,48,.06);
+}
+.chat-fab .cl-tag::before{width:6px;height:6px;margin-right:6px;background:#00b8e6;box-shadow:0 0 6px rgba(0,184,230,.7)}
+.chat-fab[data-skin]:hover .cl-tag{background:#f0f6ff;border-color:var(--blue);color:var(--blue)}
+
+/* speech bubble light theme */
+.chat-fab .cl-hint{
+  padding:7px 13px;font-size:11.5px;font-weight:600;border-radius:12px 12px 3px 12px;
+  background:#ffffff;color:#0a1530;border:1.5px solid rgba(0,184,230,.5);
+  box-shadow:0 8px 24px rgba(31,92,255,.16),0 2px 8px rgba(10,21,48,.08);
+}
+
+/* calmer motion */
+@keyframes rbBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes rbFlame{from{transform:scaleY(.85);opacity:.5}to{transform:scaleY(1.05);opacity:.75}}
+@keyframes rbFlameBoost{from{transform:scaleY(1.2);opacity:.6}to{transform:scaleY(1.5);opacity:.85}}
+
+@media (max-width:760px){
+  .chat-fab .cl-art,.chat-fab .cl-gif{width:50px}
+  .chat-fab[data-skin="robot"],.chat-fab[data-skin="gif"]{right:10px;bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+}
+/* ==========================================================================
+   Colourways: metal tones + glow. Pick one in chat-launcher.js (DEFAULT_THEME)
+   or preview with ?theme=steel|silver|graphite|gold|carbon
+   ========================================================================== */
+.chat-fab[data-skin]{--cl-m1:#6c778b;--cl-m2:#2b313d;--cl-m3:#0a0c11;--cl-s1:#10131a;--cl-s2:#667287;--cl-edge:#7e8aa0}
+.chat-fab[data-theme="graphite"]{--cl-glow:#00e5ff;--cl-glow2:#1f5cff;--cl-glow-rgb:0,229,255}
+.chat-fab[data-theme="steel"]{
+  --cl-m1:#f3f6fa;--cl-m2:#aab5c6;--cl-m3:#566073;--cl-s1:#6f7a8d;--cl-s2:#e6ebf3;--cl-edge:#7f8ba0;
+  --cl-glow:#58b8ff;--cl-glow2:#2563ff;--cl-glow-rgb:88,184,255;
+}
+.chat-fab[data-theme="silver"]{
+  --cl-m1:#ffffff;--cl-m2:#e0e6ef;--cl-m3:#a3aec2;--cl-s1:#a3aec2;--cl-s2:#ffffff;--cl-edge:#97a3b8;
+  --cl-glow:#00b8e6;--cl-glow2:#1f5cff;--cl-glow-rgb:0,184,230;
+}
+.chat-fab[data-theme="silver"] .cl-art svg{filter:drop-shadow(0 2px 3px rgba(10,21,48,.28))}
+.chat-fab[data-theme="carbon"]{
+  --cl-m1:#3b3e46;--cl-m2:#16181d;--cl-m3:#050607;--cl-s1:#0a0b0d;--cl-s2:#3d4149;--cl-edge:#5e636f;
+  --cl-glow:#e8f1ff;--cl-glow2:#8fb0ff;--cl-glow-rgb:232,241,255;
+}
+/* ==========================================================================
+   Reduced motion: everything rests, hint bubble is not shown
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  .chat-fab[data-skin],
+  .chat-fab[data-skin] *,
+  .chat-fab[data-skin] *::before{animation:none!important;transition:none!important}
+  .chat-fab .cl-hint{display:none}
+}
