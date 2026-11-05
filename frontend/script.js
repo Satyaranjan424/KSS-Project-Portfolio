@@ -588,6 +588,7 @@
     { id: 'livo',    name: 'LIVO',                     tag: 'Mobile App', tech: ['React Native', 'Expo', 'TypeScript', 'React Navigation', 'TanStack Query', 'Firebase', 'Java', 'Spring Boot', 'Spring Security', 'JPA / Hibernate', 'PostgreSQL', 'Flyway', 'JWT', 'Cloudinary', 'Docker', 'REST APIs'] },
     { id: 'matte-sigona', name: 'Matte Sigona',        tag: 'Food & Beverage', tech: ['React Native', 'Expo', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'REST APIs', 'Cloudinary'] },
     { id: 'kalpanaaa-ai', name: 'Kalpanaaa AI Assistant', tag: 'Conversational AI', tech: ['React Native', 'Expo', 'TypeScript', 'Python', 'FastAPI', 'Node.js', 'Express', 'Redis', 'REST APIs', 'Cloudinary'] },
+    { id: 'whatsapp-bot', name: 'WhatsApp Chatbot',         tag: 'Automation', tech: ['Node.js', 'Express', 'Python', 'FastAPI', 'Redis', 'REST APIs', 'Cloudinary'] },
     { id: 'fairticket',   name: 'FairTicket',               tag: 'Ticketing & Events', tech: ['React Native', 'Expo', 'TypeScript', 'Node.js', 'Express', 'Redis', 'PostgreSQL', 'Server-Sent Events', 'JWT', 'REST APIs'] }
   ];
   const GROUPS = [
