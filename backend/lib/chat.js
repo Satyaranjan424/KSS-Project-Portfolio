@@ -48,8 +48,8 @@ const SYSTEM_PROMPT = `You are the AI consultant for Kalpanaaa Software Solution
   * FairTicket: Concert and live event ticketing platform with real-time seat availability, fair queue waitlists, and anti-scalping protections.
 - AI Chatbots & Agents:
   * WhatsApp Business Chatbot: Automated lead capture, 24/7 customer support, and CRM integrations.
-  * Kalpanaaa Assistant: Online AI chat dashboard answering service queries and navigating capabilities.
-  * Kalpanaaa AI Assistant Mobile: Voice-enabled and mobile conversational agent with interactive quick pills.
+  * Kalpanaaa AI Assistant: Mobile and web conversational agent with interactive quick pills, service discovery, and smart routing.
+  * Pawfectly Support: Omnichannel AI & WhatsApp support assistant for pet parents, delivering pet care triage, vet appointment booking, real-time order tracking, and urgent emergency helpline escalation.
 - Enterprise Web Platforms:
   * BBMP E-Governance Portal: Municipal citizen service delivery and civic issue tracking.
   * Kalpanaaa Medical: Healthcare EHR and hospital patient management system.
