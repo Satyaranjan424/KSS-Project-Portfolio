@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalpanaaa Software Solutions (KSS) — Portfolio</title>
+<meta name="description" content="Kalpanaaa Software Solutions (KSS): mobile app development, WhatsApp & AI chatbot development, and enterprise web platforms. Explore our portfolio.">
+<meta name="theme-color" content="#f3f8ff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="stylesheet" href="styles.css">
+<script>
+(function(){try{var r=document.documentElement;if(!sessionStorage.getItem('kssBoot')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('booting');setTimeout(function(){r.classList.remove('booting')},6000);}}catch(e){}})();
+</script>
+</head>
+<body>
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot-box">
+    <div class="boot-brand"><img class="boot-logo" src="assets/logo-mark.png" alt="" width="140" height="120"><span>KALPANAAA // SYSTEMS</span></div>
+    <pre id="bootLog"></pre>
+    <div class="boot-bar"><i id="bootBar"></i></div>
+    <b id="bootPct">0%</b>
+  </div>
+</div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Kalpanaaa Software Solutions home">
+    <img class="brand-logo" src="assets/logo-full.png" alt="Kalpanaaa Software Solutions" width="768" height="120">
+  </a>
+  <nav class="nav-links" id="navLinks" aria-label="Primary">
+    <span class="nav-dash" id="navDash" aria-hidden="true"></span>
+    <a href="#apps" data-t="mobile apps">mobile apps</a>
+    <a href="#chatbots" data-t="ai chatbots">ai chatbots</a>
+    <a href="#web" data-t="web">web</a>
+    <a href="#stack" data-t="stack">stack</a>
+    <a href="#services" data-t="services">services</a>
+    <a href="#contact" class="nav-talk">let's talk<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-floor" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <h1 class="reveal d1" aria-label="Engineering intelligent apps, WhatsApp chatbots, AI assistants and web platforms for what's next.">Engineering<br><span class="grad glitch" id="rot" data-text="intelligent apps">intelligent apps</span><br>for what's next.</h1>
+    <p class="lead reveal d2">Kalpanaaa Software Solutions (KSS) designs and ships mobile apps for citizens, shoppers and professionals, and AI chatbots that automate customer engagement on WhatsApp and the web.</p>
+    <div class="hero-cta reveal d3">
+      <a href="#apps" class="btn magnetic">Explore our work <span aria-hidden="true">→</span></a>
+      <a href="#contact" class="btn btn-ghost magnetic">Start a project</a>
+    </div>
+    <ul class="hero-stats reveal d4">
+      <li><b data-count="5">0</b><span>Mobile apps</span></li>
+      <li><b data-count="3">0</b><span>AI chatbots</span></li>
+      <li><b data-count="4">0</b><span>Web platforms</span></li>
+      <li><b data-count="12">0</b><span>Showcased builds</span></li>
+    </ul>
+  </div>
+  <div class="hero-visual reveal d2" id="heroVisual" aria-hidden="true">
+    <canvas id="orb"></canvas>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="marquee" aria-label="Technologies">
+  <div class="marquee-track">
+    <span>React</span><span>Python</span><span>Django</span><span>Java 21</span><span>Spring Boot 3</span><span>Node.js</span><span>Express</span><span>TypeScript</span><span>JavaScript</span><span>Tailwind CSS</span><span>Vite</span><span>WhatsApp Chatbots</span><span>AI &amp; Automation</span><span>Cloud &amp; DevOps</span>
+    <span>React</span><span>Python</span><span>Django</span><span>Java 21</span><span>Spring Boot 3</span><span>Node.js</span><span>Express</span><span>TypeScript</span><span>JavaScript</span><span>Tailwind CSS</span><span>Vite</span><span>WhatsApp Chatbots</span><span>AI &amp; Automation</span><span>Cloud &amp; DevOps</span>
+  </div>
+</section>
+
+<!-- MOBILE APPS -->
+<section class="section" id="apps">
+  <header class="section-head reveal">
+    <h2>Mobile <span class="grad">App Development</span></h2>
+    <p>Consumer and civic-scale apps for iOS and Android, built around fast, intuitive, delightful experiences.</p>
+  </header>
+
+  <div class="console reveal" data-console>
+    <div class="tabs" role="tablist" aria-label="Mobile app projects">
+      <button class="tab" role="tab" id="tab-nagara" aria-controls="pane-nagara" aria-selected="true"><i>01</i><span>NAGARA<small>Civic Tech</small></span><em class="bar"></em></button>
+      <button class="tab" role="tab" id="tab-grabit" aria-controls="pane-grabit" aria-selected="false" tabindex="-1"><i>02</i><span>Grabit<small>Quick Commerce</small></span><em class="bar"></em></button>
+      <button class="tab" role="tab" id="tab-livo" aria-controls="pane-livo" aria-selected="false" tabindex="-1"><i>03</i><span>LIVO<small>Productivity</small></span><em class="bar"></em></button>
+      <button class="tab" role="tab" id="tab-matte-sigona" aria-controls="pane-matte-sigona" aria-selected="false" tabindex="-1"><i>04</i><span>Matte Sigona<small>Food &amp; Beverage</small></span><em class="bar"></em></button>
+      <button class="tab" role="tab" id="tab-fairticket" aria-controls="pane-fairticket" aria-selected="false" tabindex="-1"><i>05</i><span>FairTicket<small>Live Events &amp; Concerts</small></span><em class="bar"></em></button>
+    </div>
+
+    <article class="pane active" role="tabpanel" id="pane-nagara" aria-labelledby="tab-nagara">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/nagara.jpg" data-caption="NAGARA — Bengaluru in Your Hands" aria-label="Enlarge NAGARA showcase">
+          <img src="assets/nagara.jpg" alt="NAGARA citizen services app showcase" width="1600" height="900"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">Civic Tech · Mobile App</p>
+        <h3>NAGARA <small>Bengaluru in Your Hands</small></h3>
+        <p>A smarter, cleaner and more connected Bengaluru. A one-stop citizen platform to access city services, report issues, track updates and stay informed, anytime, anywhere.</p>
+        <ul class="features">
+          <li>Report &amp; track civic issues with live status</li>
+          <li>Bus, metro &amp; route information</li>
+          <li>Water &amp; utility services</li>
+          <li>City at a glance: traffic, weather, air quality</li>
+          <li>Emergency services &amp; real-time alerts</li>
+        </ul>
+        <div class="chips"><span>iOS</span><span>Android</span><span>Real-time alerts</span><span>Citizen services</span></div>
+      </div>
+    </article>
+
+    
+
+    <article class="pane" role="tabpanel" id="pane-grabit" aria-labelledby="tab-grabit">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/grabit.jpg" data-caption="Grabit — Groceries at Your Doorstep" aria-label="Enlarge Grabit showcase">
+          <img src="assets/grabit.jpg" alt="Grabit grocery delivery app showcase" width="1600" height="900"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">Quick Commerce · Mobile App</p>
+        <h3>Grabit <small>Groceries at your doorstep</small></h3>
+        <p>Fresh groceries, daily essentials and favourite snacks, all in one place. A fast, friendly shopping experience from search to doorstep, serving Kalyanagar, Bengaluru.</p>
+        <ul class="features">
+          <li>Smart search across milk, snacks, drinks, atta &amp; more</li>
+          <li>Category browsing &amp; trending picks</li>
+          <li>Persistent cart with quick checkout</li>
+          <li>Real-time order tracking from store to door</li>
+        </ul>
+        <div class="chips"><span>iOS</span><span>Android</span><span>E-commerce</span><span>Order tracking</span></div>
+      </div>
+    </article>
+
+    
+
+    <article class="pane" role="tabpanel" id="pane-livo" aria-labelledby="tab-livo">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/livo.jpg" data-caption="LIVO — Your Life OS" aria-label="Enlarge LIVO showcase">
+          <img src="assets/livo.jpg" alt="LIVO Life OS productivity app showcase" width="1600" height="900"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">Productivity · Mobile App</p>
+        <h3>LIVO <small>Your life, all in one place</small></h3>
+        <p>Plan. Do. Grow. LIVO is a personal Life OS that helps you stay focused, productive and in control every day, with smart suggestions that explain why a task matters now.</p>
+        <ul class="features">
+          <li>Tasks, calendar &amp; daily schedule</li>
+          <li>Goals and habit building</li>
+          <li>Expense tracking</li>
+          <li>Insights to understand, improve &amp; grow</li>
+        </ul>
+        <div class="chips"><span>iOS</span><span>Android</span><span>Smart planning</span><span>Insights</span></div>
+      </div>
+    </article>
+
+    <article class="pane" role="tabpanel" id="pane-matte-sigona" aria-labelledby="tab-matte-sigona">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/matte-sigona.jpg" data-caption="Matte Sigona — Café &amp; Good Vibes" aria-label="Enlarge Matte Sigona showcase">
+          <img src="assets/matte-sigona.jpg" alt="Matte Sigona cafe and food delivery app showcase" width="1600" height="900"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">Food &amp; Beverage · Mobile App</p>
+        <h3>Matte Sigona <small>Café &amp; Good Vibes</small></h3>
+        <p>Because one visit is never enough. A vibrant café experience and digital ordering app connecting food lovers with fresh bites, creamy shakes, handcrafted coffee, and good vibes.</p>
+        <ul class="features">
+          <li>Explore by category: handcrafted coffee, burgers, sandwiches &amp; shakes</li>
+          <li>Trending dishes: Peri Peri Fries, Mushroom Cheese Sandwich &amp; Chicken Cheese Wrap</li>
+          <li>Brand story, ambient café gallery &amp; visit guidance</li>
+          <li>Seamless digital menu exploration, dine-in &amp; takeaway ordering</li>
+        </ul>
+        <div class="chips"><span>iOS</span><span>Android</span><span>Food &amp; Beverage</span><span>Menu &amp; Ordering</span></div>
+      </div>
+    </article>
+
+    <article class="pane" role="tabpanel" id="pane-fairticket" aria-labelledby="tab-fairticket">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/fairticket.jpg" data-caption="FairTicket — Real People. Real Access." aria-label="Enlarge FairTicket showcase">
+          <img src="assets/fairticket.jpg" alt="FairTicket event and concert booking mobile app showcase" width="1600" height="900"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">Live Events · Mobile App</p>
+        <h3>FairTicket <small>Real People. Real Access.</small></h3>
+        <p>Live events bring us closer. FairTicket offers fair, transparent access to the concerts, comedy shows, live sports, and cultural festivals fans love, with real-time seat availability and anti-scalping protections.</p>
+        <ul class="features">
+          <li>Book events, concerts, comedy &amp; IPL sports matches with instant seat selection</li>
+          <li>Real-time availability, demand tracking &amp; sold-out waitlist queue</li>
+          <li>Safe &amp; secure payments with anti-scalping digital ticket passes</li>
+          <li>Instant tour updates, artist alerts &amp; venue gate notifications</li>
+        </ul>
+        <div class="chips"><span>iOS</span><span>Android</span><span>Live Events</span><span>Ticketing &amp; Payments</span></div>
+      </div>
+    </article>
+
+    
+
+    
+  </div>
+</section>
+
+<!-- CHATBOTS -->
+<section class="section section-alt" id="chatbots">
+  <header class="section-head reveal">
+    <h2>AI &amp; <span class="grad">WhatsApp Chatbots</span></h2>
+    <p>Conversational experiences that qualify leads, answer customers instantly and automate service around the clock.</p>
+  </header>
+
+  <div class="demo-cta reveal"><button type="button" class="btn magnetic" data-open-chat>Chat with our AI assistant <span aria-hidden="true">→</span></button></div>
+  <div class="console reveal" data-console>
+    <div class="tabs" role="tablist" aria-label="Chatbot projects">
+      <button class="tab" role="tab" id="tab-wa" aria-controls="pane-wa" aria-selected="true"><i>01</i><span>WhatsApp Chatbot<small>WhatsApp Business</small></span><em class="bar"></em></button>
+      <button class="tab" role="tab" id="tab-assistant" aria-controls="pane-assistant" aria-selected="false" tabindex="-1"><i>02</i><span>Kalpanaaa Assistant<small>AI Web Chat</small></span><em class="bar"></em></button>
+      <button class="tab" role="tab" id="tab-ai-assistant" aria-controls="pane-ai-assistant" aria-selected="false" tabindex="-1"><i>03</i><span>Kalpanaaa AI Assistant<small>Mobile &amp; Voice</small></span><em class="bar"></em></button>
+    </div>
+
+    <article class="pane active" role="tabpanel" id="pane-wa" aria-labelledby="tab-wa">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/whatsapp-chatbot.jpg" data-caption="WhatsApp Chatbot Development" aria-label="Enlarge WhatsApp chatbot showcase">
+          <img src="assets/whatsapp-chatbot.jpg" alt="WhatsApp chatbot development showcase" width="1600" height="901"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">WhatsApp Business · Automation</p>
+        <h3>WhatsApp Chatbot <small>Smart, automated, on-brand</small></h3>
+        <p>Customised WhatsApp chatbots that automate and grow your business, from the first "Hi" to a qualified lead, an order or a resolved support query.</p>
+        <ul class="features">
+          <li>Lead generation &amp; qualification</li>
+          <li>Seamless business-system integration</li>
+          <li>24×7 customer support</li>
+          <li>Order &amp; service automation</li>
+          <li>Quick-reply flows: service details, use cases, demo booking, expert handoff</li>
+        </ul>
+        <div class="chips"><span>WhatsApp Business</span><span>Lead gen</span><span>24×7 support</span><span>Integrations</span></div>
+      </div>
+    </article>
+
+    
+
+    <article class="pane" role="tabpanel" id="pane-assistant" aria-labelledby="tab-assistant">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/kalpanaaa-assistant.jpg" data-caption="Kalpanaaa Assistant — Chat Dashboard" aria-label="Enlarge Kalpanaaa Assistant showcase">
+          <img src="assets/kalpanaaa-assistant.jpg" alt="Kalpanaaa Assistant AI chat dashboard" width="1600" height="900"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">AI Assistant · Web Chat</p>
+        <h3>Kalpanaaa Assistant <small>Your AI assistant at Kalpanaaa</small></h3>
+        <p>An always-online AI assistant in a clean chat dashboard. It answers service questions instantly and guides visitors to the right team, portfolio or career page.</p>
+        <ul class="features">
+          <li>Conversational answers on services &amp; capabilities</li>
+          <li>Chat history, saved chats &amp; FAQs</li>
+          <li>Quick links to services, portfolio, team &amp; careers</li>
+        </ul>
+        <div class="chips"><span>AI Assistant</span><span>Chat dashboard</span><span>Always online</span></div>
+      </div>
+    </article>
+
+    <article class="pane" role="tabpanel" id="pane-ai-assistant" aria-labelledby="tab-ai-assistant">
+      <div class="holo">
+        <button class="shot" data-zoom="assets/kalpanaaa-ai-assistant.jpg" data-caption="Kalpanaaa AI Assistant — Mobile Conversational Agent" aria-label="Enlarge Kalpanaaa AI Assistant showcase">
+          <img src="assets/kalpanaaa-ai-assistant.jpg" alt="Kalpanaaa AI Assistant mobile showcase" width="1600" height="900"><span class="sweep"></span><span class="zoom-hint">⤢ EXPAND</span>
+        </button>
+      </div>
+      <div class="pane-info">
+        <p class="tag">AI Assistant · Mobile &amp; Voice</p>
+        <h3>Kalpanaaa AI Assistant <small>Intelligent mobile conversational agent</small></h3>
+        <p>Your intelligent assistant for software, AI, cloud and digital transformation solutions. Instant service discovery, portfolio exploration, career guidance, and direct engineer handoffs with voice and interactive quick pills.</p>
+        <ul class="features">
+          <li>End-to-end service exploration: Custom Software, Cloud, AI &amp; DevOps</li>
+          <li>Interactive quick pills: Services, Portfolio, Contact Team &amp; Careers</li>
+          <li>Voice interaction, attachment support &amp; contextual dialogue memory</li>
+          <li>Automated client lead qualification &amp; instant team routing</li>
+        </ul>
+        <div class="chips"><span>Conversational AI</span><span>Mobile App</span><span>Voice &amp; Chat</span><span>Lead Routing</span></div>
+      </div>
+    </article>
+
+    
+  </div>
+</section>
+
+<div class="circuit" aria-hidden="true"><i></i></div>
+<!-- WEB -->
+<section class="section" id="web">
+  <header class="section-head reveal">
+    <h2>Enterprise <span class="grad">Web Platforms</span></h2>
+    <p>Full-stack systems for governance, healthcare, finance and education, built to be secure, scalable and real-time.</p>
+  </header>
+
+  <div class="bento">
+    <article class="card span7 reveal">
+      <button class="card-img" data-zoom="assets/web-bbmp.jpg" data-caption="BBMP e-Governance Portal" aria-label="Enlarge BBMP portal"><img src="assets/web-bbmp.jpg" alt="BBMP e-governance portal home page" loading="lazy" width="1600" height="1069"><span class="sweep"></span></button>
+      <div class="card-body">
+        <p class="tag">Governance</p>
+        <h3>BBMP E-Governance Portal</h3>
+        <p>Municipal automation platform where citizens submit civic requests, upload photo evidence, track live resolution progress and access essential public services.</p>
+        <div class="chips"><span>Python</span><span>Django</span><span>ReactJS</span><span>JavaScript</span></div>
+      </div>
+    </article>
+
+    
+    <article class="card span5 reveal d1">
+      <button class="card-img" data-zoom="assets/web-medical.jpg" data-caption="Kalpanaaa Medical — Healthcare Platform" aria-label="Enlarge medical platform"><img src="assets/web-medical.jpg" alt="Kalpanaaa Medical healthcare platform home page" loading="lazy" width="1536" height="1024"><span class="sweep"></span></button>
+      <div class="card-body">
+        <p class="tag">Healthcare</p>
+        <h3>Kalpanaaa Medical</h3>
+        <p>Next-gen healthcare and unified EHR system: multi-role appointments, e-prescriptions, diagnostics, lifetime EHRs, passwordless OTP login and live bed &amp; emergency capacity.</p>
+        <div class="chips"><span>React</span><span>Django</span><span>TypeScript</span><span>Tailwind CSS</span></div>
+      </div>
+    </article>
+
+    
+    <article class="card span5 reveal">
+      <button class="card-img" data-zoom="assets/web-finance.jpg" data-caption="Kalpanaaa Finance — Banking &amp; Wealth Platform" aria-label="Enlarge finance platform"><img src="assets/web-finance.jpg" alt="Kalpanaaa Finance platform home page" loading="lazy" width="1536" height="1024"><span class="sweep"></span></button>
+      <div class="card-body">
+        <p class="tag">FinTech</p>
+        <h3>Kalpanaaa Finance</h3>
+        <p>Enterprise digital banking and wealth platform: wallet transactions, automated loan EMI approvals, fixed-return investments, expert consultation booking and KYC audit workflows.</p>
+        <div class="chips"><span>Java 21</span><span>Spring Boot 3</span><span>React.js</span><span>Tailwind CSS</span></div>
+      </div>
+    </article>
+
+    
+    <article class="card span7 reveal d1">
+      <button class="card-img" data-zoom="assets/web-education.jpg" data-caption="Kalpanaaa Education — Academic Portal" aria-label="Enlarge education portal"><img src="assets/web-education.jpg" alt="Kalpanaaa education portal home page" loading="lazy" width="1536" height="1024"><span class="sweep"></span></button>
+      <div class="card-body">
+        <p class="tag">EdTech</p>
+        <h3>Kalpanaaa Education</h3>
+        <p>Real-time academic and administration portal with live SSE updates, dynamic course rosters, automated attendance, examinations, fee processing and bcrypt-hashed security.</p>
+        <div class="chips"><span>React (Vite)</span><span>Node.js</span><span>Express</span></div>
+      </div>
+    </article>
+
+    
+  </div>
+</section>
+
+<div class="circuit" aria-hidden="true"><i></i></div>
+<!-- STACK -->
+<section class="section" id="stack">
+  <header class="section-head reveal">
+    <h2>Stack <span class="grad">Explorer</span></h2>
+    <p>The technologies behind our web and mobile platforms. Hover or tap a technology to see where we've used it, or a project to see its stack.</p>
+  </header>
+  <div class="stack-x reveal" id="stackMap">
+    <div class="sx-col"><p class="col-label">Technology</p><div id="techCol"></div></div>
+    <div class="sx-col"><p class="col-label">Project</p><div class="sx-projs" id="projCol"></div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <header class="section-head reveal">
+    <h2>End-to-end <span class="grad">technology services</span></h2>
+    <p>From idea to App Store, from first prototype to production at scale.</p>
+  </header>
+  <div class="services">
+    <div class="service reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h3>Mobile App Development</h3><p>High-quality iOS &amp; Android apps with polished UX and robust backends.</p></div>
+    <div class="service reveal d1"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10h7"/></svg></span><h3>WhatsApp &amp; AI Chatbots</h3><p>Lead qualification, support and order automation on WhatsApp and the web.</p></div>
+    <div class="service reveal d2"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></span><h3>Web Platforms</h3><p>Secure, real-time enterprise portals and customer-facing products.</p></div>
+    <div class="service reveal"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><h3>AI &amp; Automation</h3><p>Intelligent workflows that remove manual effort and speed up decisions.</p></div>
+    <div class="service reveal d1"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.5-9A6 6 0 0 1 18 10a4 4 0 0 1-.5 8z"/></svg></span><h3>Cloud &amp; DevOps</h3><p>Reliable, scalable infrastructure with automated delivery pipelines.</p></div>
+    <div class="service reveal d2"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><h3>QA, Consulting &amp; Product Engineering</h3><p>Quality assurance, IT consulting and end-to-end product engineering.</p></div>
+  </div>
+</section>
+
+<div class="circuit" aria-hidden="true"><i></i></div>
+<!-- PROCESS -->
+<section class="section" id="process">
+  <header class="section-head reveal">
+    <h2>A process built for <span class="grad">momentum</span></h2>
+  </header>
+  <ol class="steps">
+    <li class="reveal"><b>01</b><h3>Discover</h3><p>Goals, users and constraints, aligned into a clear scope.</p></li>
+    <li class="reveal d1"><b>02</b><h3>Design</h3><p>Flows and interfaces prototyped and refined with you.</p></li>
+    <li class="reveal d2"><b>03</b><h3>Build</h3><p>Iterative sprints with demos, testing and clean engineering.</p></li>
+    <li class="reveal d3"><b>04</b><h3>Launch &amp; Scale</h3><p>Store release, monitoring and continuous improvement.</p></li>
+  </ol>
+</section>
+
+<div class="circuit" aria-hidden="true"><i></i></div>
+<!-- CONTACT -->
+<section class="section cta" id="contact">
+  <div class="cta-box reveal">
+    <h2>Have a <span class="grad">mobile app</span> or <span class="grad">WhatsApp chatbot</span> in mind?</h2>
+    <p>Tell us about your idea. We will respond with a plan, timeline and next steps.</p>
+    <form id="leadForm" class="form" novalidate>
+      <label>Name<input name="name" type="text" autocomplete="name" required maxlength="80" placeholder="Your name"></label>
+      <label>Company<input name="company" type="text" autocomplete="organization" maxlength="80" placeholder="Company name"></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@company.com"></label>
+      <label>Interested in
+        <select name="interest">
+          <option>Mobile App Development</option>
+          <option>WhatsApp Chatbot Development</option>
+          <option>AI Chatbot / Automation</option>
+          <option>Web Platform</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label class="full">Project details<textarea name="message" rows="3" maxlength="800" placeholder="What are you looking to build?"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <div class="form-actions full">
+        <button type="submit" class="btn magnetic" id="sendMsg">Send message</button>
+      </div>
+      <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="ft-beam" aria-hidden="true"><i></i></div>
+  <div class="ft-wrap">
+    <div class="ft-top">
+      <div class="ft-brand reveal">
+        <a href="#top" class="brand" aria-label="Kalpanaaa Software Solutions, back to top"><img class="brand-logo" src="assets/logo-full.png" alt="Kalpanaaa Software Solutions" width="768" height="120"></a>
+        <p class="ft-tag">Mobile apps, WhatsApp &amp; AI chatbots and enterprise web platforms, engineered to ship and built to scale.</p>
+      </div>
+
+      <nav class="ft-col reveal d1" aria-label="Footer">
+        <ul class="ft-links">
+          <li><a href="#apps">Mobile apps</a></li>
+          <li><a href="#chatbots">AI chatbots</a></li>
+          <li><a href="#web">Web</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="ft-col reveal d2">
+        <ul class="ft-social">
+          <li>
+            <a class="ft-soc ig" href="https://www.instagram.com/kalpnaaasoftwaresolutions/" target="_blank" rel="noopener noreferrer" aria-label="Kalpanaaa Software Solutions on Instagram (opens in a new tab)">
+              <span class="ft-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/></svg></span>
+              <span class="ft-soc-t"><b>Instagram</b><small>@kalpnaaasoftwaresolutions</small></span>
+              <svg class="ft-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="ft-soc li" href="https://www.linkedin.com/company/kalpanaaa-software-solution-pvt-ltd/" target="_blank" rel="noopener noreferrer" aria-label="Kalpanaaa Software Solution Pvt Ltd on LinkedIn (opens in a new tab)">
+              <span class="ft-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.84-2 3.8-2 4.06 0 4.84 2.6 4.84 6V21h-4v-5.1c0-1.22-.02-2.8-1.7-2.8-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></span>
+              <span class="ft-soc-t"><b>LinkedIn</b><small>Kalpanaaa Software Solution Pvt Ltd</small></span>
+              <svg class="ft-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </li>
+          <li>
+            <a class="ft-soc ml" href="mailto:info@kalpanaaasoftwaresolutions.in" aria-label="Email Kalpanaaa Software Solutions">
+              <span class="ft-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7.5 8 6 8-6"/></svg></span>
+              <span class="ft-soc-t"><b>Email</b><small>info@kalpanaaasoftwaresolutions.in</small></span>
+              <svg class="ft-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <p class="ft-copy">&copy; <span id="year"></span> Kalpanaaa Software Solutions (KSS). All rights reserved.</p>
+      <button class="ft-up" id="toTop" type="button" aria-label="Back to top">
+        <svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ftGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00b8e6"/><stop offset="1" stop-color="#1f5cff"/></linearGradient></defs><circle class="track" cx="24" cy="24" r="23" fill="none" stroke-width="1.5"/><circle class="bar" cx="24" cy="24" r="23" fill="none" stroke="url(#ftGrad)" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </button>
+    </div>
+
+    <div class="ft-mark" aria-hidden="true">KALPANAAA</div>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chatFab" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="chatPanel">
+  <span class="chat-fab-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10h7"/></svg></span>
+  <span>Chat with our AI</span>
+</button>
+<section class="chat" id="chatPanel" role="dialog" aria-label="KSS AI assistant" hidden>
+  <div class="chat-frame"><div class="chat-in">
+  <header class="chat-head">
+    <span class="av"><img src="assets/logo-mark.png" alt="" width="140" height="120"></span>
+    <div><b>Kalpanaaa (KSS)</b><small><i></i>AI assistant · online</small></div>
+    <span class="chat-bars" aria-hidden="true"><b></b><b></b><b></b><b></b></span>
+    <button type="button" id="chatClose" aria-label="Close demo">✕</button>
+  </header>
+  <div class="chat-body" id="chatBody" role="log" aria-live="polite"></div>
+  <div class="chat-quick" id="chatQuick"></div>
+  <form class="chat-input" id="chatForm" autocomplete="off">
+    <input id="chatText" type="text" maxlength="200" placeholder="Type a message..." aria-label="Type a message">
+    <button type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></button>
+  </form>
+  <p class="chat-note">AI assistant · may make mistakes · do not share sensitive info</p>
+  </div></div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close preview">✕</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
